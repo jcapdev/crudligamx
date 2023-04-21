@@ -62,3 +62,72 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+### LIGA MX
+
+## CRUD RAPIDO A1
+
+    composer create-project laravel/laravel websiteadmin  8.6
+
+
+## INSTALARLARAVEL
+
+    composer create-project laravel/laravel NAMEPROYECT_BORRAR  8.6
+
+## crear base de datos en mysql
+
+## configurar base de datos
+    .env
+
+
+#  CREAR MIGRATE
+
+	php artisan make:migration jugadores
+# migrando
+
+	php artisan migrate
+	
+### INSTALAR LARAVEL UI
+## instalando UI estandar de laravel 
+	composer require laravel/ui 
+## instalando dependencia de boostrap auth
+	php artisan ui bootstrap --auth 
+	
+## NPM
+	npm install
+## Dependencia
+	npm install resolve-url-loader@^5.0.0 --save-dev --legacy-peer-deps
+## ibex/crud-generator
+	composer require ibex/crud-generator --dev
+## paquetes del crud 
+	php artisan vendor:publish --tag=crud
+## creando MVC de jugadores
+	php artisan make:crud jugadores
+### Configurando las rutas
+	Route::resource('/jugadores', App\Http\Controllers\JugadoreController::class);
+
+## agregar Auth en JugadoresController dentro de la clase
+	 public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
+
+## Agregar etiqueta para otro mudulo
+# directorio /layouts/app.blade.php
+# agregar 
+	@if (Route::has('login'))
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('jugadores.index') }}">{{ __('Jugadores') }}</a>
+            </li>
+    @endif
+
+
+
+
+
+
+
+
